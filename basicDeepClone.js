@@ -18,3 +18,21 @@ function deepClone(obj) {
   }
   return result;
 }
+
+// Testing
+const obj = {
+  a: "test",
+  b: { c: 1 },
+  arr: [1, 2, 3, 4],
+  arr2: [{ x: "y" }],
+  d: null,
+  e: new Date(),
+  f: /abc/g
+};
+
+const obj2 = deepClone(obj);
+
+console.log("obj2", obj2);
+console.log("obj === obj2", obj === obj2); // false
+console.log("obj.b === obj2.b", obj.b === obj2.b); // false
+console.log("obj.arr2 === obj2.arr2", obj.arr2 === obj2.arr2); // false
